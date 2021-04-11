@@ -1,0 +1,235 @@
+{% load static %}
+
+<head>
+	<meta charset="UTF-8">
+	<title>Tax Calculator System</title>
+    <!----creating link for style.css---->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head> 
+<body>
+        <!--Header start-->
+        <header class="header">
+            <div class="container">
+                <!--Page Navigation Start-->
+                <nav class="nav-bar"> <!--nav tag represent the section of navigation links-->
+                    <!--Logo -->
+                    <div id="logo">
+                        <a href="#"
+                          ><img src="{% static 'img/logo.png' %}" alt="..."
+                        /></a>
+                    </div>
+                    <!--Logo -->
+                    <!---navigation list-->
+                    <div class="navigation">
+                        <ul>
+                            <!--class active to show which page we are at-->
+                            <!--Class icon is the main class and icon-home is sub main class-->
+                            <li><a class="active" href="#"><span class="icon icon-home"></span>Home</a></li>
+                            <li><a href="#"><span class="icon icon-news"></span>News</a></li>
+                            <li><a href="#"><span class="icon icon-faq"></span>FAQ</a></li>
+                            <li><a href="#"><span class="icon icon-about"></span>About Us</a></li>
+                        </ul>
+                    </div>
+                    <!---navigation list-->
+                </nav>
+            </div>
+            <!--Page Navigation ends-->
+        </header>
+        <!--Header End-->
+        <!--section starts-->
+        <!--class main parents of all elements-->
+        <div class="main">
+          <!---class container to use width, max-width and margin auto-->  
+          <div class="container">
+            <!--section tag starts -->  
+            <section class="section">
+              <h1>Tax Calculator System</h1>
+                    <!--class section-top contains with tax calculator system-->
+                  <div class="section-top">
+                      <div class="tax-calculator" id="calculation">
+                          <form>
+                            <h3>Basic Information</h3>   
+                            <!--class basic-info contains with basic information-->  
+                            <form class="basic">
+                              <div class="basic-info">
+                                  <div class="info-top">
+                                      <div class="marriage-info">
+                                      {%csrf_token%}
+                                          <label for="marriage">Marriage status:</label>
+                                          <select name="marriage">
+                                          <option value="Married">Married</option>
+                                          <option value="UnMarried">UnMarried</option>
+                                          </select>
+                                      </div>
+              
+                                      <div class="fiscal-info">
+                                          <label for="fiscal-year">Fiscal Year:</label>
+                                          <select name="fiscal-year">
+                                          <option value="a">2074/75</option>
+                                          <option value="b">2075/76</option>
+                                          <option value="c">2076/77</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="info-bottom">
+                                      <div class="gender-info">
+                                          <label for="gender">Gender:</label>
+                                          <select name="gender">
+                                          <option value="Male">Male</option>
+                                          <option value="Female">Female</option>
+                                          </select>
+                                      </div>
+              
+                                      <div class="residental-info">
+                                          <label for="residental">Residental:</label>
+                                          <select name="residental">
+                                          <option value="resident">Resident</option>
+                                          <option value="non-resident">Non Resident</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                              </div>
+                            </form>
+                            <h3>Annual Income</h3>
+                            <!--class income-info contains with income informations-->
+                            <form class="income">
+                              <div class="income-info">
+                                  <div class="income-top">
+                                      <div class="income-salary">
+                                          <label for="salary">Salary:</label>
+                                          <input type="number" name="salary" min-length="4" placeholder="100000">
+                                      </div>
+                                      <div class="income-allowance">
+                                          <label for="allowance">Allowance:</label>
+                                          <input type="number" name="allowance">
+                                      </div>
+                                  </div>
+                                  <div class="income-bottom">
+                                      <div class="income-bonus">
+                                          <label for="bonus">Bonus:</label>
+                                          <input type="number" name="Bonus">
+                                      </div>
+                                      <div class="income-others">
+                                          <label for="others">Others:</label>
+                                          <input type="number" name="others">
+                                      </div>
+                                  </div>
+                              </div>
+                            </form>
+                            <h3>Deduction</h3>
+                            <!---class deduction-info contains with deduction information-->
+                            <form class="deduction">
+                              <div class="deduction-info">
+                                  <div class="deduction-top">
+                                      <div class="deduction-fund">
+                                          <label for="fund">Providen Fund:</label>
+                                          <input type="number" placeholder="10000" name="Fund">
+                                      </div>
+                                      <div class="deduction-donation">
+                                          <label for="donation">Donation:</label>
+                                          <input type="number" name="donation">
+                                      </div>
+                                  </div>
+                                  <div class="deduction-middle">
+                                      <div class="deduction-trust">
+                                          <label for="trust">Citizen Investment Trust:</label>
+                                          <input type="number" name="trust">
+                                      </div>
+                                      <div class="deduction-medical">
+                                          <label for="medical">Medical Expencess:</label>
+                                          <input type="number" name="medical">
+                                      </div>
+                                  </div>
+                                 <div class="deduction-bottom">
+                                  <div class="dedcution-insurance">
+                                      <label for="insurance">Insurance:</label>
+                                      <input type="number" name="insurance">
+                                  </div>
+                                  <div class="deduction-others">
+                                      <label for="others">Others:</label>
+                                      <input type="number" name="other">
+                                  </div>
+                                 </div>
+                              </div>
+                            </form>
+                            <!--class button i.e calculator buttons-->
+                            <div class="button">
+                                <button id="btn-reset">Reset Values</button>
+                                <button class="open-result" id="btn-calculate" type="submit" onclick="myResult()">Calculate</button>
+                            </div>
+                            
+                      </div>
+                      <div class="result" id="pop-out"> 
+                        <h2>Result</h2>
+                        <div class="result-detail">
+                            <div class=gross-income>
+                                <label>Gross Income</label>
+                                <output></output>
+                            </div>    
+                            <div class="gross-deduction">
+                                <label>Deduction</label>
+                                <output></output>
+                            </div>
+                            <div class="tax-percent">
+                                <label>Tax%</label>
+                                <output></output>
+                            </div>
+                            <div class="tax-amount">    
+                                <label>Tax amount</label>
+                                <output></output>
+                            </div>
+                        </div>
+                        <button class="close-result" id="close-button" type="button" onclick="closeForm()">Close</button>
+                    </div>
+                  </form>
+                  </div>  
+            </section>
+            <!---section tag ends-->
+
+            <!--aside news starts-->
+            <aside class="side-news">
+              <h2>Latest News</h2>
+              <!---side news-->
+                <div class="news">
+                  <div class="news-1">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <button class="click click-me1"><a href="#">Read More</a></button>
+                  </div>
+                  <div class="news-2">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <button class="click click-me2"><a href="#">Read More</a></button>
+                  </div>
+                  <div class="news-3">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <button class="click click-me3"><a href="#">Read More</a></button>                  </div>
+                  <div class="news-4">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <button class="click click-me4"><a href="#">Read More</a></button>                  </div>
+                </div>
+            </aside>
+            <!--aside news ends-->
+          </div>
+        </div>
+        <!--footer starts-->
+        <footer class="footer">
+            <div class="container">
+                <div class="copyrights">
+                    <p>CopyRights@2021</p>
+                </div>
+            </div>
+        </footer>
+        <!--footer starts-->
+        <!---inner line js-->
+        <script>
+            function myResult() {
+                document.getElementById("pop-out").style.display ="block";
+                document.getElementById("calculation").style.display="none";
+            }
+            function closeForm() {
+                document.getElementById("pop-out").style.display="none";
+                document.getElementById("calculation").style.display="block";
+            }
+        </script>
+</body> 
+</html>
+

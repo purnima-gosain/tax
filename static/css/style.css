@@ -1,0 +1,483 @@
+/*google font link*/
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"); /*url link to adjust fonts*/
+html {
+  scroll-behavior: smooth;
+}
+/*using * to select all in once*/
+* {
+  margin: 0; /*webpage alwasys contain extra auto margin so we declare margin as 0 */
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Calistoga", cursive;
+  text-shadow: 0px 0.6px black;
+  background-color: #f7f7f7;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 16px;
+}
+/*container to addjust width, max-width and margin auto*/
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+/*all sector ends*/
+
+/*header CSS Starts*/
+
+.header {
+  position: relative;
+  background: #6e6b6b;
+}
+/*hover effects that changes after hovering herader area */
+.header:hover {
+  background: #504c4c;
+  transition: 0.5s;
+}
+/*giving height and width in nav-bar class*/
+.nav-bar {
+  height: 100px;
+  width: 100%;
+}
+/*logo */
+#logo {
+  width: 100px;
+  padding: 10px;
+  cursor: pointer;
+  float: left;
+}
+
+#logo a img {
+  width: 100%;
+  border-radius: 10px;
+}
+/*css navigation*/
+.navigation {
+  display: inline-block;
+  margin: 28px auto;
+  padding: 0;
+  vertical-align: middle;
+  overflow: hidden;
+  border-radius: 5px;
+  position: relative;
+}
+
+.navigation ul li {
+  list-style: none;
+  float: left;
+  margin: 0 -3px;
+}
+
+.navigation ul li a {
+  background: #312f2f;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  padding: 10px 6px;
+  float: left;
+}
+
+/* using css before after to main css design*/
+.navigation li:before {
+  content: "";
+  float: left;
+  width: 0;
+  height: 0;
+  left: -20px;
+  border-top: 20px solid #312f2f;
+  border-bottom: 22px solid #312f2f;
+  border-left: 10px solid transparent;
+}
+
+.navigation li:after {
+  content: "";
+  float: left;
+  width: 0;
+  height: 0;
+  left: 100%;
+  border-color: transparent;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 10px solid #312f2f;
+}
+
+/*nth-child, first-child, last-child is the selectors that select element by addressing child*/
+.navigation li:nth-child(1):before {
+  border-left-color: transparent;
+}
+
+.navigation li:first-child a {
+  padding-left: 15px;
+}
+
+.navigation li:first-child:before {
+  border: none;
+}
+
+.navigation li:last-child a {
+  padding-right: 15px;
+}
+
+.navigation li:last-child:after {
+  border: none;
+}
+/*hover effects */
+.navigation li:hover a {
+  background: #fff;
+  color: #000;
+}
+
+.navigation li:hover:before {
+  border-color: #fff;
+  border-left-color: transparent;
+}
+
+.navigation li:hover:after {
+  border-left-color: #fff;
+}
+
+/* icon css*/
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 13px;
+  height: 12px;
+  margin: 0 4px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+}
+
+/* image icon input*/
+.icon-home {
+  background-image: url("../img/home.png");
+}
+
+.icon-news {
+  background-image: url("../img/news.png");
+}
+
+.icon-faq {
+  background-image: url("../img/faqs.png");
+}
+
+.icon-about {
+  background-image: url("../img/about.png");
+}
+/* header css ends*/
+
+/* section css starts*/
+.main {
+  margin: 20px auto;
+}
+
+.main::after {
+  content: "";
+  clear: both; /* to clear float*/
+  display: table;
+}
+/*giving section tag (Tax calculator system) 95% width*/
+.section {
+  height: 650;
+  width: 65%;
+  float: left;
+  position: relative;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+.section-top {
+  height: auto;
+}
+
+/*calculator starts*/
+.tax-calculator {
+  background: rgb(255, 255, 255);
+  height: 615px;
+  margin-right: 5px;
+  padding: 10px;
+  border: 1px solid rgb(131, 121, 121);
+  box-shadow: inset 0 1px 0 0 #686666, 0 1px 3px #000;
+  position: relative;
+  overflow: hidden;
+}
+
+/* inside tax-calculator all selector*/
+/* label i.e. salary, marriage status*/
+.tax-calculator label {
+  display: inline-block;
+  width: 200px;
+  height: 25px;
+}
+/* select i.e married/unmarried*/
+.tax-calculator select {
+  font-family: "Calistoga", cursive;
+  width: 110px;
+  padding: 3px;
+}
+/* input to input numbers*/
+.tax-calculator input {
+  width: 200px;
+  height: 25px;
+  outline: none;
+  padding: 3px;
+}
+/*gives focus when user click on input*/
+.tax-calculator input:focus {
+  border-color: rgb(63, 60, 60);
+  box-shadow: inset 0 1px 0 0 #686666, 0 1px 3px #000;
+  transition: 0.5s;
+}
+/*element selectors */
+/*selects selected element and change css*/
+.info-top,
+.info-bottom,
+.income-top,
+.income-bottom,
+.deduction-top,
+.deduction-middle,
+.deduction-bottom {
+  display: flex;
+}
+
+.income-salary,
+.income-bonus,
+.deduction-fund,
+.deduction-trust,
+.dedcution-insurance {
+  margin: auto;
+}
+/*inside taxicalculator all selectoin end*/
+
+/*basic information */
+.basic-info {
+  padding: 10px;
+}
+
+.marriage-info,
+.fiscal-info,
+.gender-info,
+.residental-info {
+  padding: 3px;
+  margin: auto;
+}
+/*basic information*/
+/* for income*/
+.income-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.income-salary,
+.income-allowance,
+.income-bonus,
+.income-others {
+  padding: 5px;
+}
+/*income*/
+/*for deduction information*/
+.deduction-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.deduction-fund,
+.deduction-donation,
+.deduction-trust,
+.deduction-medical,
+.dedcution-insurance,
+.deduction-others {
+  padding: 5px;
+}
+/*deduction information*/
+
+/*button starts*/
+.tax-calculator button {
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 150px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 0 #686666, 0 1px 3px #000;
+  transition: 0.5s;
+}
+/* button reset to clear input's numbers*/
+#btn-reset {
+  margin-left: 30px;
+  color: #fff;
+  background: #434343;
+  transition: 0.5s;
+}
+
+#btn-reset:hover {
+  color: #fff;
+  background: #fff;
+  color: #000;
+}
+/*button calculate to calculate all inputs*/
+#btn-calculate {
+  color: #000;
+  background: rgb(223, 216, 216);
+  margin-left: 360px;
+}
+
+#btn-calculate:hover {
+  color: #fff;
+  background: #242121;
+}
+/*button ends*/
+/*pop-out result*/
+.result {
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  display: none;
+  height: 650px;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 1;
+  border: 1px solid #434343;
+}
+
+.gross-income,
+.gross-deduction,
+.tax-percent,
+.tax-amount {
+  width: 400px;
+  height: 25px;
+  border: 1px solid rgb(131, 121, 121);
+}
+
+/* id button for close */
+#close-button {
+  color: #000;
+  background: rgb(223, 216, 216);
+  height: 25px;
+  width: 100px;
+  padding: 5px;
+  position: absolute;
+  right: 90px;
+  bottom: 60px;
+}
+
+#close-button:hover {
+  color: #fff;
+  background: #242121;
+}
+/*pop-out result*/
+
+/*calculator ends*/
+
+/*side news*/
+/*displays news aside*/
+.side-news {
+  width: 33%;
+  margin-left: 2%;
+  float: left;
+  height: 650px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.side-news .news {
+  border: 1px solid rgb(131, 121, 121);
+  box-shadow: inset 0 1px 0 0 #686666, 0 1px 3px #000;
+}
+
+/*click button main class */
+.click {
+  position: absolute;
+  top: 60px;
+  left: 160px;
+  right: 0;
+  bottom: 60px;
+  transition: 0.5s;
+}
+
+.click a {
+  display: none;
+  font-family: "Calistoga", cursive;
+}
+/*click button main class */
+
+.news-1 {
+  height: 153px;
+  overflow: hidden;
+  border: 1px solid rgb(131, 121, 121);
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+.news-1:hover .click-me1 {
+  background-color: #000;
+  padding: 5px;
+}
+
+.news-1:hover .click-me1 a {
+  display: block;
+  color: #fff;
+}
+
+.news-2 {
+  height: 153px;
+  overflow: hidden;
+  border: 1px solid rgb(131, 121, 121);
+  position: relative;
+}
+
+.news-2:hover .click-me2 {
+  background-color: #000;
+  padding: 5px;
+}
+
+.news-2:hover .click-me2 a {
+  display: block;
+  color: #fff;
+}
+
+.news-3 {
+  height: 153px;
+  overflow: hidden;
+  border: 1px solid rgb(131, 121, 121);
+  position: relative;
+}
+
+.news-3:hover .click-me3 {
+  background-color: #000;
+  padding: 5px;
+}
+
+.news-3:hover .click-me3 a {
+  display: block;
+  color: #fff;
+}
+
+.news-4 {
+  height: 153px;
+  overflow: hidden;
+  border: 1px solid rgb(131, 121, 121);
+  position: relative;
+}
+
+.news-4:hover .click-me4 {
+  background-color: #000;
+  padding: 5px;
+}
+
+.news-4:hover .click-me4 a {
+  display: block;
+  color: #fff;
+}
+/*side news ends*/
+
+/*section css ends*/
