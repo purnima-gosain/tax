@@ -1,41 +1,14 @@
+{% extends 'base.html' %}
 {% load static %}
 
+{% block content %}
 <head>
 	<meta charset="UTF-8">
 	<title>Tax Calculator System</title>
-    <!----creating link for style.css---->
+    <!--creating link for style.css-->
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head> 
 <body>
-        <!--Header start-->
-        <header class="header">
-            <div class="container">
-                <!--Page Navigation Start-->
-                <nav class="nav-bar"> <!--nav tag represent the section of navigation links-->
-                    <!--Logo -->
-                    <div id="logo">
-                        <a href="#"
-                          ><img src="{% static 'img/logo.png' %}" alt="..."
-                        /></a>
-                    </div>
-                    <!--Logo -->
-                    <!---navigation list-->
-                    <div class="navigation">
-                        <ul>
-                            <!--class active to show which page we are at-->
-                            <!--Class icon is the main class and icon-home is sub main class-->
-                            <li><a class="active" href="#"><span class="icon icon-home"></span>Home</a></li>
-                            <li><a href="#"><span class="icon icon-news"></span>News</a></li>
-                            <li><a href="#"><span class="icon icon-faq"></span>FAQ</a></li>
-                            <li><a href="#"><span class="icon icon-about"></span>About Us</a></li>
-                        </ul>
-                    </div>
-                    <!---navigation list-->
-                </nav>
-            </div>
-            <!--Page Navigation ends-->
-        </header>
-        <!--Header End-->
         <!--section starts-->
         <!--class main parents of all elements-->
         <div class="main">
@@ -155,11 +128,12 @@
                             <!--class button i.e calculator buttons-->
                             <div class="button">
                                 <button id="btn-reset">Reset Values</button>
-                                <button class="open-result" id="btn-calculate" type="submit" onclick="myResult()">Calculate</button>
+                                {% comment %} <button class="open-result" id="btn-calculate" type="submit" onclick="myResult()">Calculate</button> {% endcomment %}
+                                <button  id="btn-calculate" type="submit">Calculate</button>
                             </div>
                             
                       </div>
-                      <div class="result" id="pop-out"> 
+                      {% comment %} <div class="result" id="pop-out"> 
                         <h2>Result</h2>
                         <div class="result-detail">
                             <div class=gross-income>
@@ -180,7 +154,7 @@
                             </div>
                         </div>
                         <button class="close-result" id="close-button" type="button" onclick="closeForm()">Close</button>
-                    </div>
+                    </div> {% endcomment %}
                   </form>
                   </div>  
             </section>
@@ -232,4 +206,4 @@
         </script>
 </body> 
 </html>
-
+{% endblock  %}

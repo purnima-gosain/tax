@@ -3,6 +3,28 @@
 {% block content %}
 
 Total Tax: {{tax}}
+<div class="result" id="pop-out"> 
+                        <h2>Result</h2>
+                        <div class="result-detail">
+                            <div class=gross-income>
+                                <label>Gross Income</label>
+                                <output></output>
+                            </div>    
+                            <div class="gross-deduction">
+                                <label>Deduction</label>
+                                <output></output>
+                            </div>
+                            <div class="tax-percent">
+                                <label>Tax%</label>
+                                <output></output>
+                            </div>
+                            <div class="tax-amount">    
+                                <label>Tax amount</label>
+                                <output></output>
+                            </div>
+                        </div>
+                        <button class="close-result" id="close-button" type="button" onclick="closeForm()">Close</button>
+                    </div>
 
 
 {% endblock content %}

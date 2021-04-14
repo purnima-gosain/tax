@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('',views.home, name='index.html'),
-    path('POST',views.post , name="post")
+    path('POST',views.post , name="tax")
 ]

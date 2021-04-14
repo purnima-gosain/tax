@@ -1,0 +1,29 @@
+{% load static %} 
+<header class="header">
+            <div class="container">
+                <!--Page Navigation Start-->
+                <nav class="nav-bar"> <!--nav tag represent the section of navigation links-->
+                    <!--Logo -->
+                    <div id="logo">
+                        <a href="#"
+                          ><img src="{% static 'img/logo.png' %}" alt="..."
+                        /></a>
+                    </div>
+                    <!--Logo -->
+                    <!---navigation list-->
+                    <div class="navigation">
+                         <ul>
+                            <!--class active to show which page we are at-->
+                            <!--Class icon is the main class and icon-home is sub main class-->
+                            <li><a class="active" href="#"><span class="icon icon-home"></span>Home</a></li>
+                            <li><a href="#"><span class="icon icon-news"></span>News</a></li>
+                            <li><a href="#"><span class="icon icon-faq"></span>FAQ</a></li>
+                            <li><a href="#"><span class="icon icon-about"></span>About Us</a></li>
+                        </ul> 
+                    </div>
+                    <!---navigation list-->
+                </nav>
+            </div>
+            <!--Page Navigation ends-->
+        </header>
+                    
