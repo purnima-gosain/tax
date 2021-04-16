@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<title>Tax Calculator System</title>
     <!--creating link for style.css-->
-	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> <!--{% static 'css/style.css' %}-->
 </head> 
 <body>
         <!--section starts-->
@@ -131,36 +131,25 @@
                            
                             <!--class button i.e calculator buttons-->
                             <div class="button">
-                                <button id="btn-reset">Reset Values</button>
+                                
+                                
+                                
+                                <input type="submit"  id="btn-reset" Value="Reset Value">
                                 {% comment %} <button class="open-result" id="btn-calculate" type="submit" onclick="myResult()">Calculate</button> {% endcomment %}
-                             <input type="submit" value="Calculate">
+                                <input type="submit"  id="btn-calculate" value="Calculate">
+                                    <div class="income-allowance">
+                                     {{total_tax}}
+                                          <label for="total_tax">Tax:</label>
+                                          <output type="number" name="total_tax">
+                                      </div>  
+                                    <h3>Tax amount</h3>
+                            
+                                     
+                            
                             </div>
                             </form>
-                            
                       </div>
-                      {% comment %} <div class="result" id="pop-out"> 
-                        <h2>Result</h2>
-                        <div class="result-detail">
-                            <div class=gross-income>
-                                <label>Gross Income</label>
-                                <output></output>
-                            </div>    
-                            <div class="gross-deduction">
-                                <label>Deduction</label>
-                                <output></output>
-                            </div>
-                            <div class="tax-percent">
-                                <label>Tax%</label>
-                                <output></output>
-                            </div>
-                            <div class="tax-amount">    
-                                <label>Tax amount</label>
-                                <output></output>
-                            </div>
-                        </div>
-                        <button class="close-result" id="close-button" type="button" onclick="closeForm()">Close</button>
-                    </div> {% endcomment %}
-                  </form>
+                  {% comment %} </form> {% endcomment %}
                   </div>  
             </section>
             <!---section tag ends-->
@@ -187,6 +176,8 @@
                 </div>
             </aside>
             <!--aside news ends-->
+
+            
           </div>
         </div>
         <!--footer starts-->
@@ -210,5 +201,4 @@
             }
         </script>
 </body> 
-</html>
-{% endblock  %}
+{% endblock content %}

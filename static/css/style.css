@@ -1,4 +1,4 @@
-/*google font link*/
+/* google font link*/
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"); /*url link to adjust fonts*/
 html {
   scroll-behavior: smooth;
@@ -300,17 +300,18 @@ p {
 /*deduction information*/
 
 /*button starts*/
-.tax-calculator button {
+.tax-calculator input {
   border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
-  width: 150px;
+  width: 200px;
   height: 30px;
   border: none;
   cursor: pointer;
   box-shadow: inset 0 1px 0 0 #686666, 0 1px 3px #000;
   transition: 0.5s;
 }
+
 /* button reset to clear input's numbers*/
 #btn-reset {
   margin-left: 30px;
@@ -320,7 +321,6 @@ p {
 }
 
 #btn-reset:hover {
-  color: #fff;
   background: #fff;
   color: #000;
 }
@@ -328,7 +328,7 @@ p {
 #btn-calculate {
   color: #000;
   background: rgb(223, 216, 216);
-  margin-left: 360px;
+  margin-left: 108px;
 }
 
 #btn-calculate:hover {
@@ -480,4 +480,4 @@ p {
 }
 /*side news ends*/
 
-/*section css ends*/
+/*section css ends */

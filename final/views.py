@@ -4,39 +4,35 @@ from django.http import HttpResponse
 # Create your views here.
 def home(request):
     if request.method == 'POST':
-        salary = request.POST['salary']
-       
+        sal = request.POST['salary']
+        bon = request.POST['Bonus']
         allo = request.POST['allowance']
-        print("allo",allo)
+        oth = request.POST['others']
+        salary = int(sal)
+        bonus = int(bon)
+        allow = int(allo)
+        other = int(oth)
+        total_salary = salary + bonus + allow + other
+        print("total_salary",total_salary)
+        print("allow",allow)
 
-    #     if total_salary<=400000:
-    #     total_tax= total_salary*(0.01)
-    # elif total_salary > 400000 and total_salary <=500000:
-    #     total_tax = total_salary*(0.1)
-    # elif total_salary > 500000 and total_salary <=700000:
-    #     total_tax = total_salary*(0.2)
-    # elif total_salary > 700000 and total_salary <=2000000:
-    #     total_tax = total_salary*(0.3)
-    # else:
-    #     total_tax= total_salary*(0.36)
-    return render(request, 'index.html',{'allowance':allo})
-def post(request):
-    sal= request.POST['salary']
+        if total_salary <=400000:
+            total_tax= total_salary*(0.01)
+            print("total_tax",total_tax)
+        elif total_salary > 400000 and total_salary <=500000:
+            total_tax = total_salary*(0.1)
+            print("total_tax",total_tax)
+        elif total_salary > 500000 and total_salary <=700000:
+            total_tax = total_salary*(0.2)
+            print("total_tax",total_tax)
+        elif total_salary > 700000 and total_salary <=2000000:
+            total_tax = total_salary*(0.3)
+            print("total_tax",total_tax)
+        else:
+            total_tax= total_salary*(0.36)
+            print("total_tax",total_tax)
+    return render(request, 'index.html')
+        # {'tax':total_tax}
+
    
-    bon=request.GET['Bonus']
-    allow=request.GET['allowance']
-    oth=request.GET['others']
-    total_salary= sal+bon+allow+oth
-# logic to calculate tax according to annual income.
-    if total_salary<=400000:
-        total_tax= total_salary*(0.01)
-    elif total_salary > 400000 and total_salary <=500000:
-        total_tax = total_salary*(0.1)
-    elif total_salary > 500000 and total_salary <=700000:
-        total_tax = total_salary*(0.2)
-    elif total_salary > 700000 and total_salary <=2000000:
-        total_tax = total_salary*(0.3)
-    else:
-        total_tax= total_salary*(0.36)
- 
-    return render(request,'tax.html',{'tax':total_tax})
+
