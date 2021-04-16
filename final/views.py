@@ -13,8 +13,12 @@ def home(request):
         allow = int(allo)
         other = int(oth)
         total_salary = salary + bonus + allow + other
+        
+        print("salary",salary)
+        print("allowance",allow)
+        print("bonus",bonus)
+        print("other",other)
         print("total_salary",total_salary)
-        print("allow",allow)
 
         if total_salary <=400000:
             total_tax= total_salary*(0.01)
@@ -32,7 +36,7 @@ def home(request):
             total_tax= total_salary*(0.36)
             print("total_tax",total_tax)
     return render(request, 'index.html')
-        # {'tax':total_tax}
+        # {'total_tax':total_tax}
 
    
 
