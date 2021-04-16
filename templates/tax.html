@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block body %}
+
 
 Total Tax: {{tax}}
-<div class="result" id="pop-out"> 
+{% comment %} <div class="result" id="pop-out"> 
                         <h2>Result</h2>
                         <div class="result-detail">
                             <div class=gross-income>
@@ -24,7 +25,7 @@ Total Tax: {{tax}}
                             </div>
                         </div>
                         <button class="close-result" id="close-button" type="button" onclick="closeForm()">Close</button>
-                    </div>
+                    </div> {% endcomment %}
 
 
-{% endblock content %}
+{% endblock body %}

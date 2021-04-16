@@ -20,7 +20,7 @@
                     <!--class section-top contains with tax calculator system-->
                   <div class="section-top">
                       <div class="tax-calculator" id="calculation">
-                          <form>
+                          <form method="POST">
                             <h3>Basic Information</h3>   
                             <!--class basic-info contains with basic information-->  
                             <form class="basic">
@@ -62,10 +62,14 @@
                                       </div>
                                   </div>
                               </div>
-                            </form>
+                            
                             <h3>Annual Income</h3>
+                            {%if allowance%}
+                            {{allowance}}
+                            {%endif%}
                             <!--class income-info contains with income informations-->
-                            <form class="income">
+                            <form class="income" method="POST">
+                            
                               <div class="income-info">
                                   <div class="income-top">
                                       <div class="income-salary">
@@ -88,10 +92,10 @@
                                       </div>
                                   </div>
                               </div>
-                            </form>
+                            
                             <h3>Deduction</h3>
                             <!---class deduction-info contains with deduction information-->
-                            <form class="deduction">
+                   
                               <div class="deduction-info">
                                   <div class="deduction-top">
                                       <div class="deduction-fund">
@@ -124,13 +128,14 @@
                                   </div>
                                  </div>
                               </div>
-                            </form>
+                           
                             <!--class button i.e calculator buttons-->
                             <div class="button">
                                 <button id="btn-reset">Reset Values</button>
                                 {% comment %} <button class="open-result" id="btn-calculate" type="submit" onclick="myResult()">Calculate</button> {% endcomment %}
-                                <button  id="btn-calculate" type="submit">Calculate</button>
+                             <input type="submit" value="Calculate">
                             </div>
+                            </form>
                             
                       </div>
                       {% comment %} <div class="result" id="pop-out"> 
