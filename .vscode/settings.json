@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "F:\\sem3\\python.exe"
+    "python.pythonPath": "C:\\Users\\yoges\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "ponicode.testSettings.testLocation.locationType": "Same folder as source file",
+    "ponicode.testSettings.testLocation.path": "{rootDir}/{filePath}/{fileName}.test.{ext}"
 }
